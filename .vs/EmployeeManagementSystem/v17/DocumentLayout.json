@@ -3,28 +3,64 @@
   "WorkspaceRootPath": "D:\\C# Projects\\EmployeeManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\dtos\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\dtos\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\services\\hashingservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:services\\hashingservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\dtos\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\dtos\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\db\\employeedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:db\\employeedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\entities\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\entities\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\dtos\\authuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\dtos\\authuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\entities\\employeemanagmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\entities\\employeemanagmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,20 +71,8 @@
       "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:repositories\\interfaces\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\db\\employeedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:db\\employeedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\employeemanagementsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\entities\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\entities\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,14 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\services\\interfaces\\ijwtservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:services\\interfaces\\ijwtservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\dtos\\authuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\dtos\\authuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|d:\\c# projects\\employeemanagementsystem\\models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53AC82B-C46C-4FB0-BF18-A7D4629F0967}|EmployeeManagementSystem.csproj|solutionrelative:models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,20 +98,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EmployeeDBContext.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\DB\\EmployeeDBContext.cs",
-              "RelativeDocumentMoniker": "DB\\EmployeeDBContext.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\DB\\EmployeeDBContext.cs",
-              "RelativeToolTip": "DB\\EmployeeDBContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBgAAABPAAAA",
+              "DocumentIndex": 3,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\DTOs\\Employee.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\Employee.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\DTOs\\Employee.cs",
+              "RelativeToolTip": "Models\\DTOs\\Employee.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T08:30:48.902Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-01-03T18:27:12.315Z",
               "EditorCaption": ""
             },
             {
@@ -133,72 +148,163 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EmployeeRepository.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\EmployeeRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\EmployeeRepository.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\EmployeeRepository.cs",
-              "RelativeToolTip": "Repositories\\EmployeeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T08:27:12.792Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IEmployeeRepository.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\Interfaces\\IEmployeeRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IEmployeeRepository.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\Interfaces\\IEmployeeRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IEmployeeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T08:27:03.14Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T08:56:11.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAuwBwAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:04:41.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
               "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "Repositories\\UserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T11:09:43.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "EmployeeDBContext.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\DB\\EmployeeDBContext.cs",
+              "RelativeDocumentMoniker": "DB\\EmployeeDBContext.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\DB\\EmployeeDBContext.cs",
+              "RelativeToolTip": "DB\\EmployeeDBContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T08:30:48.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Authentication.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\Authentication.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Authentication.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\Authentication.cs",
+              "RelativeToolTip": "Models\\Entities\\Authentication.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T11:22:18.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthUser.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\DTOs\\AuthUser.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\AuthUser.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\DTOs\\AuthUser.cs",
+              "RelativeToolTip": "Models\\DTOs\\AuthUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T11:47:14.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\User.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\User.cs",
+              "RelativeToolTip": "Models\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBIAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T10:54:00.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAiwDYAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T11:37:40.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HashingServices.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Services\\HashingServices.cs",
+              "RelativeDocumentMoniker": "Services\\HashingServices.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Services\\HashingServices.cs",
+              "RelativeToolTip": "Services\\HashingServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T16:47:11.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Employee.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\Employee.cs",
+              "RelativeToolTip": "Models\\Entities\\Employee.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T10:54:54.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\EmployeeRepository.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\EmployeeRepository.cs",
+              "RelativeToolTip": "Repositories\\EmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T08:27:12.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmployeeManagmentDbContext.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\EmployeeManagmentDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\EmployeeManagmentDbContext.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\EmployeeManagmentDbContext.cs",
+              "RelativeToolTip": "Models\\Entities\\EmployeeManagmentDbContext.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAqwEIAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T16:31:04.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-03T16:34:08.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAuwBwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T11:04:41.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository.cs",
@@ -211,32 +317,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\User.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\User.cs",
-              "RelativeToolTip": "Models\\Entities\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAVAAAA",
+              "DocumentIndex": 15,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T10:54:00.656Z",
+              "WhenOpened": "2025-01-03T08:56:11.817Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Authentication.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\Authentication.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Authentication.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\Authentication.cs",
-              "RelativeToolTip": "Models\\Entities\\Authentication.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 16,
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\Interfaces\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IEmployeeRepository.cs",
+              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Repositories\\Interfaces\\IEmployeeRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IEmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:22:18.376Z"
+              "WhenOpened": "2025-01-03T08:27:03.14Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "JWTServices.cs",
               "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Services\\JWTServices.cs",
               "RelativeDocumentMoniker": "Services\\JWTServices.cs",
@@ -248,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "EmployeeManagementSystem.csproj",
               "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
               "RelativeDocumentMoniker": "EmployeeManagementSystem.csproj",
@@ -260,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -272,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -284,19 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAswC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:37:40.151Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "IJWTServices.cs",
               "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Services\\Interfaces\\IJWTServices.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IJWTServices.cs",
@@ -305,30 +400,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T15:13:25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AuthUser.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\DTOs\\AuthUser.cs",
-              "RelativeDocumentMoniker": "Models\\DTOs\\AuthUser.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\DTOs\\AuthUser.cs",
-              "RelativeToolTip": "Models\\DTOs\\AuthUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:47:14.2Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\Employee.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Employee.cs",
-              "ToolTip": "D:\\C# Projects\\EmployeeManagementSystem\\Models\\Entities\\Employee.cs",
-              "RelativeToolTip": "Models\\Entities\\Employee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T10:54:54.429Z"
             }
           ]
         }

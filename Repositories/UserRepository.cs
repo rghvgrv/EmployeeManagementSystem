@@ -1,6 +1,7 @@
 ﻿using EmployeeManagementSystem.DB;
 using EmployeeManagementSystem.Models.Entities;
 using EmployeeManagementSystem.Repositories.Interfaces;
+using EmployeeManagementSystem.Services;
 
 namespace EmployeeManagementSystem.Repositories
 {
@@ -35,6 +36,7 @@ namespace EmployeeManagementSystem.Repositories
 
         public void AddUser(User user)
         {
+            user.PasswordHash = HashingServices.HashPassword(user.PasswordHash);
             _empDBContext.User.Add(user);
             _empDBContext.SaveChanges();
         }
