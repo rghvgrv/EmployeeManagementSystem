@@ -1,4 +1,5 @@
 ﻿using EmployeeManagementSystem.DB;
+using EmployeeManagementSystem.Models.Entities;
 using EmployeeManagementSystem.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,5 +23,45 @@ namespace EmployeeManagementSystem.Controllers
         {
             return Ok(_userRepository.GetAllUsers());
         }
+
+        [HttpGet]
+        [Route("/GetUserById/{id}")]
+        public IActionResult GetById(int id)
+        {
+            return Ok(_userRepository.GetUserById(id));
+        }
+
+        [HttpGet]
+        [Route("/GetUserByName/{name}")]
+        public IActionResult GetByName(string name)
+        {
+            return Ok(_userRepository.GetUserByName(name));
+        }
+
+
+        [HttpPost]
+        [Route("/AddUser")]
+        public IActionResult Add([FromBody] User user)
+        {
+            _userRepository.AddUser(user);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("/UpdateUser")]
+        public IActionResult Update([FromBody] User user)
+        {
+            _userRepository.UpdateUser(user);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("/DeleteUser/{id}")]
+        public IActionResult Delete(int id)
+        {
+            _userRepository.DeleteUser(id);
+            return Ok();
+        }
+
     }
 }

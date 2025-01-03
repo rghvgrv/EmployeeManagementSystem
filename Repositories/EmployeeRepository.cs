@@ -15,4 +15,28 @@ public class EmployeeRepository : IEmployeeRepository
     {
         return _empDBContext.Employee.ToList();
     }
+
+    public Employee GetEmployeeById(int id)
+    {
+        return _empDBContext.Employee.Find(id);
+    }
+
+    public void AddEmployee(Employee employee)
+    {
+        _empDBContext.Employee.Add(employee);
+        _empDBContext.SaveChanges();
+    }
+
+    public void UpdateEmployee(Employee employee)
+    {
+        _empDBContext.Employee.Update(employee);
+        _empDBContext.SaveChanges();
+    }
+
+    public void DeleteEmployee(int id)
+    {
+        var employee = _empDBContext.Employee.Find(id);
+        _empDBContext.Employee.Remove(employee);
+        _empDBContext.SaveChanges();
+    }
 }
