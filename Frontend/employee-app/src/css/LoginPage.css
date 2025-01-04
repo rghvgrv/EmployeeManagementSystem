@@ -1,0 +1,43 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+}
+
+.login h1 {
+    color: wheat;
+    margin-bottom: 20px; /* Space between h1 and form */
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login form div {
+    margin-bottom: 10px; /* Space between input fields */
+}
+
+.login form button {
+    margin-top: 10px; /* Space between password field and button */
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px; /* Space between input fields */
+}
+
+#new-employee{
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}

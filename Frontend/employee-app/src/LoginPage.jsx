@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -24,7 +27,8 @@ const LoginPage = () => {
             if (response.ok) {
                 // Handle successful login, e.g., redirect to another page
                 console.log(data);
-                window.location.href = "/dashboard";
+                localStorage.setItem('username', data.username);
+                navigate('/welcome'); 
             } else {
                 setError(data.message || "Invalid login or password");
             }
@@ -34,7 +38,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <div className="login">
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
                 <div>
@@ -57,6 +61,9 @@ const LoginPage = () => {
                 </div>
                 <button type="submit">Login</button>
             </form>
+            <button id="new-employee" onClick={() => navigate("/new-employee")}>
+                New Employee
+            </button>
             {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
     );
