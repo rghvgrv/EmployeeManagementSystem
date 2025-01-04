@@ -1,4 +1,5 @@
 ﻿using EmployeeManagementSystem.DB;
+using EmployeeManagementSystem.Models.DTOs;
 using EmployeeManagementSystem.Models.Entities;
 using EmployeeManagementSystem.Repositories.Interfaces;
 using EmployeeManagementSystem.Services;
@@ -14,43 +15,56 @@ namespace EmployeeManagementSystem.Repositories
             _empDBContext = context;
         }
 
-        public IEnumerable<object> GetAllUsers()
+        public IEnumerable<UserDTO> GetAllUsers()
         {
-            return _empDBContext.User.Select(u => new { u.Id, u.Username,u.EmpId }).ToList();
+            var users = _empDBContext.User.Select(u => new UserDTO(u.Id, u.Username, u.EmpId));
+            return users;
         }
 
-        public object GetUserById(int id)
+        public UserDTO GetUserById(int id)
         {
-            var user =  _empDBContext.User.Where(u => u.Id == id).Select(u => new { u.Id, u.Username,u.EmpId }).FirstOrDefault();
+            var user = _empDBContext.User
+                           .Where(u => u.Id == id)
+                           .Select(u => new UserDTO(u.Id,u.Username,u.EmpId))
+                           .FirstOrDefault();
             return user ?? throw new KeyNotFoundException("Id is not correct");
         }
 
-        public object GetUserByName(string name) 
+        public UserDTO GetUserByName(string name) 
         {
             var user = _empDBContext.User
                            .Where(u => u.Username == name)
-                           .Select(u => new { u.Id, u.Username, u.EmpId })
+                           .Select(u => new UserDTO(u.Id, u.Username, u.EmpId))
                            .FirstOrDefault();
             return user ?? throw new KeyNotFoundException("User not found.");
         }
 
-        public void AddUser(User user)
+        public void AddUser(UserCreateDTO user)
         {
-            user.PasswordHash = HashingServices.HashPassword(user.PasswordHash);
-            _empDBContext.User.Add(user);
+            user.Password = HashingServices.HashPassword(user.Password);
+
+            User userEntity = new User()
+            {
+                Username = user.Username,
+                PasswordHash = user.Password,
+                EmpId = user.EmpId
+            };
+            _empDBContext.User.Add(userEntity);
             _empDBContext.SaveChanges();
         }
 
-        public void UpdateUser(User user)
+        public void UpdateUser(UserDTO user)
         {
-            _empDBContext.User.Update(user);
-            _empDBContext.SaveChanges();
-        }
+            user.Password = HashingServices.HashPassword(user.Password);
 
-        public void DeleteUser(int id)
-        {
-            var user = _empDBContext.User.Find(id);
-            _empDBContext.User.Remove(user);
+            User userEntity = new User()
+            {
+                Id = user.Id,
+                Username = user.Username,
+                PasswordHash = user.Password,
+                EmpId = user.EmpId
+            };
+            _empDBContext.User.Update(userEntity);
             _empDBContext.SaveChanges();
         }
 

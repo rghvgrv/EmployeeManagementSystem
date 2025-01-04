@@ -1,4 +1,5 @@
 ﻿
+using EmployeeManagementSystem.Models.DTOs;
 using EmployeeManagementSystem.Models.Entities;
 using EmployeeManagementSystem.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -32,7 +33,7 @@ namespace EmployeeManagementSystem.Controllers
 
         [HttpPost]
         [Route("/AddEmployee")]
-        public IActionResult Add([FromBody] Employee employee)
+        public IActionResult Add([FromBody] EmployeeCreateDTO employee)
         {
             employeeRepository.AddEmployee(employee);
             return Ok();
@@ -40,17 +41,9 @@ namespace EmployeeManagementSystem.Controllers
 
         [HttpPut]
         [Route("/UpdateEmployee")]
-        public IActionResult Update([FromBody] Employee employee)
+        public IActionResult Update([FromBody] EmployeeCreateDTO employee)
         {
             employeeRepository.UpdateEmployee(employee);
-            return Ok();
-        }
-
-        [HttpDelete]
-        [Route("/DeleteEmployee/{id}")]
-        public IActionResult Delete(int id)
-        {
-            employeeRepository.DeleteEmployee(id);
             return Ok();
         }
 

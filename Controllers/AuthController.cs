@@ -1,6 +1,7 @@
 ﻿using EmployeeManagementSystem.DB;
 using EmployeeManagementSystem.Models.DTOs;
 using EmployeeManagementSystem.Models.Entities;
+using EmployeeManagementSystem.Services;
 using EmployeeManagementSystem.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -37,6 +38,8 @@ namespace EmployeeManagementSystem.Controllers
             {
                 return Unauthorized("User name is Invalid");
             }
+
+            user.Password = HashingServices.HashPassword(user.Password);
 
             if(loginuser.PasswordHash != user.Password)
             {

@@ -1,14 +1,14 @@
-﻿using EmployeeManagementSystem.Models.Entities;
+﻿using EmployeeManagementSystem.Models.DTOs;
+using EmployeeManagementSystem.Models.Entities;
 
 namespace EmployeeManagementSystem.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        IEnumerable<object> GetAllUsers();
-        object GetUserById(int id);
-        object GetUserByName(string name);
-        void AddUser(User user);
-        void UpdateUser(User user);
-        void DeleteUser(int id);
+        IEnumerable<UserDTO> GetAllUsers();
+        UserDTO GetUserById(int id);
+        UserDTO GetUserByName(string name);
+        void AddUser(UserCreateDTO user);
+        void UpdateUser(UserDTO user);
     }
 }

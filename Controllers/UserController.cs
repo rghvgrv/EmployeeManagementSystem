@@ -1,4 +1,5 @@
 ﻿using EmployeeManagementSystem.DB;
+using EmployeeManagementSystem.Models.DTOs;
 using EmployeeManagementSystem.Models.Entities;
 using EmployeeManagementSystem.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -41,26 +42,18 @@ namespace EmployeeManagementSystem.Controllers
 
         [HttpPost]
         [Route("/AddUser")]
-        public IActionResult Add([FromBody] User user)
+        public IActionResult Add([FromBody] UserCreateDTO user)
         {
             _userRepository.AddUser(user);
-            return Ok();
+            return Ok("User is Added");
         }
 
         [HttpPut]
         [Route("/UpdateUser")]
-        public IActionResult Update([FromBody] User user)
+        public IActionResult Update([FromBody] UserDTO user)
         {
             _userRepository.UpdateUser(user);
-            return Ok();
-        }
-
-        [HttpDelete]
-        [Route("/DeleteUser/{id}")]
-        public IActionResult Delete(int id)
-        {
-            _userRepository.DeleteUser(id);
-            return Ok();
+            return Ok("User is Updated");
         }
 
     }
