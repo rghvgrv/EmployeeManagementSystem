@@ -9,6 +9,6 @@ namespace EmployeeManagementSystem.Repositories.Interfaces
         EmployeeDTO GetEmployeeById(int id);
         void AddEmployee(EmployeeCreateDTO employee);
         void UpdateEmployee(EmployeeCreateDTO employee);
-
+        EmployeeDTO GetEmployeeByUserId(int userId);
     }
 }

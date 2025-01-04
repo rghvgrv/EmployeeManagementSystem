@@ -7,10 +7,12 @@ using System.Linq;
 public class EmployeeRepository : IEmployeeRepository
 {
     private readonly EmployeeDBContext _empDBContext;
+    private readonly IUserRepository _userRepo;
 
-    public EmployeeRepository(EmployeeDBContext context)
+    public EmployeeRepository(EmployeeDBContext context, IUserRepository userRepository)
     {
         _empDBContext = context;
+        _userRepo = userRepository;
     }
 
     public IEnumerable<EmployeeDTO> GetAllEmployees()
@@ -82,5 +84,26 @@ public class EmployeeRepository : IEmployeeRepository
         };
         _empDBContext.Employee.Update(empEntity);
         _empDBContext.SaveChanges();
+    }
+
+    public EmployeeDTO GetEmployeeByUserId(int userId)
+    {
+        var user = _userRepo.GetUserById(userId);
+
+        var emp = _empDBContext.Employee
+                        .Where(e => e.EmpId == user.EmpId)
+                        .Select(e => new EmployeeDTO(
+                    e.EmpId,
+                    e.FirstName,
+                    e.LastName,
+                    e.Role,
+                    e.Department,
+                    e.CreatedDate,
+                    e.ModifiedDate,
+                    e.ModifiedBy,
+                    e.CreatedBy
+                    ))
+                        .FirstOrDefault();
+        return emp ?? throw new KeyNotFoundException("Id is not correct");
     }
 }

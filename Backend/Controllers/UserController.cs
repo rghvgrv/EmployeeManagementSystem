@@ -45,7 +45,7 @@ namespace EmployeeManagementSystem.Controllers
         public IActionResult Add([FromBody] UserCreateDTO user)
         {
             _userRepository.AddUser(user);
-            return Ok("User is Added");
+            return Ok(new { message = "User Added" });
         }
 
         [HttpPut]

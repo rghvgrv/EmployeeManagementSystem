@@ -27,7 +27,7 @@ namespace EmployeeManagementSystem.Services
             {
             new Claim(ClaimTypes.Name, username),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
+            };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_key));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -39,7 +39,48 @@ namespace EmployeeManagementSystem.Services
                 expires: DateTime.UtcNow.AddMinutes(_expiryInMinutes),
                 signingCredentials: creds);
 
+            var final_token = new JwtSecurityTokenHandler().WriteToken(token);
+
+            var to = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = _issuer,
+                ValidAudience = _audience,
+                IssuerSigningKey = key
+            };
+
+            var output = new JwtSecurityTokenHandler().ValidateToken(final_token, to,out var validatedToken);
+
+            Console.WriteLine(output.Claims);
+
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        public bool ValidateToken(string token)
+        {
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_key));
+            var createToken = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = _issuer,
+                ValidAudience = _audience,
+                IssuerSigningKey = key
+            };
+
+            var output = new JwtSecurityTokenHandler().ValidateToken(token, createToken, out var validatedToken);
+
+            if(output.Identity.IsAuthenticated)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

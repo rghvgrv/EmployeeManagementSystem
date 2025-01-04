@@ -59,7 +59,7 @@ namespace EmployeeManagementSystem.Controllers
             await _employeeDBContext.SaveChangesAsync();
 
             // Return the token
-            return Ok(new { Token = token });
+            return Ok(new { Token = token , message ="Login Successfull", username = user.Username , userid = loginuser.Id });
         }
 
         [HttpPost("logogut")]

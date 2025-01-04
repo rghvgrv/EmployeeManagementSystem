@@ -2,7 +2,10 @@
 using EmployeeManagementSystem.Models.DTOs;
 using EmployeeManagementSystem.Models.Entities;
 using EmployeeManagementSystem.Repositories.Interfaces;
+using EmployeeManagementSystem.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EmployeeManagementSystem.Controllers
 {
@@ -11,10 +14,12 @@ namespace EmployeeManagementSystem.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository employeeRepository;
+        private readonly IJWTServices _jwtService;
 
-        public EmployeeController(IEmployeeRepository employeeRepository)
+        public EmployeeController(IEmployeeRepository employeeRepository,IJWTServices jWTServices)
         {
             this.employeeRepository = employeeRepository;
+            this._jwtService = jWTServices;
         }
 
         [HttpGet]
@@ -45,6 +50,23 @@ namespace EmployeeManagementSystem.Controllers
         {
             employeeRepository.UpdateEmployee(employee);
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("/GetEmployeeByUserId/{id}")]
+        public IActionResult GetEmployeeUserId(int id)
+        {
+            var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+            if(_jwtService.ValidateToken(token))
+            {
+                return Ok(employeeRepository.GetEmployeeByUserId(id));
+            }
+            else
+            {
+                return Unauthorized("Token is Unauthorized");
+            }
+
         }
 
     }

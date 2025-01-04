@@ -3,5 +3,6 @@
     public interface IJWTServices
     {
         string GenerateToken(string username);
+        bool ValidateToken(string token);
     }
 }
