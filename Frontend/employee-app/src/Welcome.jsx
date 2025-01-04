@@ -1,35 +1,63 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 
 const WelcomePage = () => {
-    const [username, setUsername] = useState('');
-    const navigate = useNavigate(); // Initialize navigate function
+  const [username, setUsername] = useState("");
+  const [userId, setUserId] = useState(null);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        // Retrieve the username from local storage
-        const storedUsername = localStorage.getItem('username');
-        if (storedUsername) {
-            setUsername(storedUsername);
-        } else {
-            // Redirect to login page if no user is logged in
-            navigate('/'); // Use navigate to go to the login page
-        }
-    }, [navigate]);
+  useEffect(() => {
+    // Retrieve session data from localStorage (will persist across tabs)
+    const storedUsername = localStorage.getItem("username");
+    const storedUserId = localStorage.getItem("userId");
 
-    const handleLogout = () => {
-        // Clear username from localStorage and navigate to login page
-        localStorage.removeItem('username');
-        navigate('/'); // Redirect to login page after logout
+    if (storedUsername && storedUserId) {
+      setUsername(storedUsername);
+      setUserId(storedUserId);
+    } else {
+      navigate("/");  // Redirect to login if no session data
+    }
+
+    // Sync session across tabs
+    const handleStorageChange = (event) => {
+      if (event.key === "username" || event.key === "userId") {
+        setUsername(localStorage.getItem("username"));
+        setUserId(localStorage.getItem("userId"));
+      }
     };
 
-    return (
-        <div className="welcome">
-            <button id='logout' onClick={handleLogout}>
-                Logout
-            </button>
-            <h1>Welcome {username}!</h1>
-        </div>
-    );
+    // Add event listener for storage changes in other tabs
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      // Cleanup the event listener when the component unmounts
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, [navigate]);
+
+  const viewProfile = () => {
+    navigate(`/GetEmployeeByUserId/${userId}`);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("username");
+    localStorage.removeItem("userId"); 
+    localStorage.removeItem("token");
+    localStorage.removeItem('scrollPosition'); // Clear scroll position on logout
+    navigate("/"); // Redirect to login after logout
+  };
+
+  return (
+    <div className="welcome">
+      <button id="logout" onClick={handleLogout}>
+        Logout
+      </button>
+      <h1>Welcome {username}!</h1>
+      <button id="viewProfile" onClick={viewProfile}>
+        View Profile
+      </button>
+    </div>
+  );
 };
 
 export default WelcomePage;

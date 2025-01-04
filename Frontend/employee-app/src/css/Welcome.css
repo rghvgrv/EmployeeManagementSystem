@@ -23,3 +23,20 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+#viewProfile{
+    position: absolute;
+    top: 20px;
+    right: 140px;
+    width: 120px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#viewProfile:hover, #logout:hover{
+    background-color: #5e9ec9;
+}

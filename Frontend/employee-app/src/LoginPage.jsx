@@ -28,6 +28,11 @@ const LoginPage = () => {
                 // Handle successful login, e.g., redirect to another page
                 console.log(data);
                 localStorage.setItem('username', data.username);
+                localStorage.setItem("userId", data.userid); // Save userId from login response
+                localStorage.setItem("token", data.token);
+                sessionStorage.setItem('username', data.username);
+                sessionStorage.setItem("userId", data.userid); // Save userId from login response
+                sessionStorage.setItem("token", data.token); // Save token from login response
                 navigate('/welcome'); 
             } else {
                 setError(data.message || "Invalid login or password");
@@ -61,9 +66,14 @@ const LoginPage = () => {
                 </div>
                 <button type="submit">Login</button>
             </form>
-            <button id="new-employee" onClick={() => navigate("/new-employee")}>
-                New Employee
+            <div className="newbtn">
+            <button id="forgot-psw" onClick={() => navigate("/new-password")}>
+                Forgot Password
             </button>
+            <button id="new-user" onClick={() => navigate("/new-user")}>
+                New User
+            </button>
+            </div>
             {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
     );

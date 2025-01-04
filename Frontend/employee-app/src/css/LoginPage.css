@@ -33,11 +33,25 @@ input {
     margin-top: 5px; /* Space between input fields */
 }
 
-#new-employee{
+#forgot-psw{
     width: auto;
     height: auto;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+}
+
+#new-user{
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.newbtn{
+    display: flex;
+    gap: 10px;
 }

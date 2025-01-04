@@ -1,0 +1,83 @@
+/* Profile container styling */
+.profile-container {
+    width: 100%;
+    padding: 20px;
+    height: 100vh;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Header styling */
+.profile-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Error message styling */
+.profile-container p {
+    margin: 10px 0;
+}
+
+.profile-container p[style*="color: red"] {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Table styling */
+.profile-details {
+    margin: auto;
+    border-collapse: collapse;
+    width: 50%;
+    border: 2px solid #000;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.profile-details strong {
+    font-weight: bold;
+}
+
+/* Table rows and cells */
+.profile-details p {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-details p:last-child {
+    border-bottom: none;
+}
+
+.profile-details p strong {
+    flex: 1;
+    text-align: left;
+}
+
+.profile-details p span {
+    flex: 2;
+    text-align: left;
+    color: #555;
+}
+
+#backBtn {
+    background-color: #3672f4;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 20%;
+}
+
+#backBtn:hover {
+    background-color: #64791a;
+}
