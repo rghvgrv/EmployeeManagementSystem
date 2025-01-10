@@ -39,23 +39,6 @@ namespace EmployeeManagementSystem.Services
                 expires: DateTime.UtcNow.AddMinutes(_expiryInMinutes),
                 signingCredentials: creds);
 
-            var final_token = new JwtSecurityTokenHandler().WriteToken(token);
-
-            var to = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = _issuer,
-                ValidAudience = _audience,
-                IssuerSigningKey = key
-            };
-
-            var output = new JwtSecurityTokenHandler().ValidateToken(final_token, to,out var validatedToken);
-
-            Console.WriteLine(output.Claims);
-
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
