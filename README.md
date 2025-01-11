@@ -21,7 +21,7 @@ Before running the project, ensure you have the following tools installed:
 
 ## Setup
 
-### Clone the repository
+### Clone the repository    
 
 ```bash
 git clone https://github.com/rghvgrv/EmployeeManagementSystem.git
