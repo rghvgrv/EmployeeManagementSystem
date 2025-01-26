@@ -30,9 +30,6 @@ const LoginPage = () => {
                 localStorage.setItem('username', data.username);
                 localStorage.setItem("userId", data.userid); // Save userId from login response
                 localStorage.setItem("token", data.token);
-                sessionStorage.setItem('username', data.username);
-                sessionStorage.setItem("userId", data.userid); // Save userId from login response
-                sessionStorage.setItem("token", data.token); // Save token from login response
                 navigate('/welcome'); 
             } else {
                 setError(data.message || "Invalid login or password");

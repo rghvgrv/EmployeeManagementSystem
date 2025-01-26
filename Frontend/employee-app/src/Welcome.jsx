@@ -39,12 +39,34 @@ const WelcomePage = () => {
     navigate(`/GetEmployeeByUserId/${userId}`);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("username");
-    localStorage.removeItem("userId"); 
-    localStorage.removeItem("token");
-    localStorage.removeItem('scrollPosition'); // Clear scroll position on logout
-    navigate("/"); // Redirect to login after logout
+  const handleLogout = async () => {
+    const employeeUserId = localStorage.getItem("userId");  // Get the userId from localStorage
+    const token = localStorage.getItem("token");    // Optionally get the token
+    // Make a POST request to the backend to log the user out and update IsActive to false
+    if (employeeUserId && token) {
+        try {
+            const response = await fetch("http://localhost:5059/api/Auth/logout", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",// Optional: pass token if needed for authentication
+                },
+                body: JSON.stringify({ employeeUserId }), // Send userId to backend
+            });
+
+            if (response.ok) {
+                localStorage.removeItem("username");
+                localStorage.removeItem("userId"); 
+                localStorage.removeItem("token"); // Clear localStorage
+                navigate("/"); // Redirect to login page
+            } else {
+                console.error("Logout failed", await response.text());
+            }
+        } catch (error) {
+            console.error("Error logging out:", error);
+        }
+    } else {
+        console.error("User is not logged in.");
+    } // Redirect to login after logout
   };
 
   return (

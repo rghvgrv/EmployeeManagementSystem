@@ -41,13 +41,25 @@ namespace EmployeeManagementSystem.Controllers
                 return Unauthorized("Password is Invalid");
             }
 
+            var status = await _employeeDBContext.Authentication.FirstOrDefaultAsync(e => e.LoginUserId == loginuser.Id && e.IsActive == true);
+            {
+                if (status != null)
+                {
+                    status.IsActive = false;
+                    await _employeeDBContext.SaveChangesAsync();
+                }
+            }
+
             //Generate JWT Token
             var token = _jwtService.GenerateToken(user.Username);
 
             var loginActivity = new Authentication
             {
                 LoginUserId = loginuser.Id,
-                LoginTime = DateTime.Now
+                AuthKey = token,
+                LoginTime = DateTime.Now,
+                LogoutTime = DateTime.Now.AddMinutes(15),
+                IsActive = true
             };
 
             await _employeeDBContext.Authentication.AddAsync(loginActivity);
@@ -57,12 +69,38 @@ namespace EmployeeManagementSystem.Controllers
             return Ok(new { Token = token , message ="Login Successfull", username = user.Username , userid = loginuser.Id });
         }
 
-        [HttpPost("logogut")]
-        public IActionResult Logout()
+        [HttpPost("logout")]
+        public IActionResult Logout([FromBody] LogoutRequest request)
         {
+            var empId = request.EmployeeUserId;
+
+            if (empId == null)
+            {
+                return Unauthorized("User not found.");
+            }
+
+            // Fetch the user from the database
+            var user = _employeeDBContext.Authentication.FirstOrDefault(e => e.LoginUserId == empId && e.IsActive == true);
+
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            // Set IsActive to false
+            user.IsActive = false;
+
+            // Save changes to the database
+            _employeeDBContext.SaveChanges();
+
             return Ok("Logout Successful");
         }
 
+        // Create a model to bind the request body
+        public class LogoutRequest
+        {
+            public int EmployeeUserId { get; set; }
+        }
 
     }
 }

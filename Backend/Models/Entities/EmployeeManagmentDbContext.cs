@@ -33,9 +33,11 @@ public partial class EmployeeManagmentDbContext : DbContext
 
             entity.ToTable("Authentication");
 
+            entity.Property(e => e.AuthKey).HasMaxLength(512);
             entity.Property(e => e.LoginTime)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+            entity.Property(e => e.LogoutTime).HasColumnType("datetime");
 
             entity.HasOne(d => d.LoginUser).WithMany(p => p.Authentications)
                 .HasForeignKey(d => d.LoginUserId)
