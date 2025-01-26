@@ -6,9 +6,9 @@ An employee management system built using ASP.NET Core that allows managing empl
 
 - User Authentication using JWT
 - Employee CRUD Operations (Create, Read, Update, Delete)
-- Role-based Authorization
 - SQL Server as database backend
-- Swagger for API documentation and testing
+- Swagger for API documentation
+- Handled mutliple concurrent sessions even in different browsers and tabs
 
 ## Prerequisites
 
