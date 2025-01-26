@@ -41,13 +41,13 @@ namespace EmployeeManagementSystem.Controllers
                 return Unauthorized("Password is Invalid");
             }
 
-            var status = await _employeeDBContext.Authentication.FirstOrDefaultAsync(e => e.LoginUserId == loginuser.Id && e.IsActive == true);
+            var activeSession = await _employeeDBContext.Authentication.FirstOrDefaultAsync(e => e.LoginUserId == loginuser.Id && e.IsActive == true);
+            if (activeSession != null)
             {
-                if (status != null)
-                {
-                    status.IsActive = false;
-                    await _employeeDBContext.SaveChangesAsync();
-                }
+                // Deactivate the current active session
+                activeSession.IsActive = false;
+                activeSession.LogoutTime = DateTime.Now;
+                await _employeeDBContext.SaveChangesAsync();
             }
 
             //Generate JWT Token
@@ -89,11 +89,45 @@ namespace EmployeeManagementSystem.Controllers
 
             // Set IsActive to false
             user.IsActive = false;
+            user.LogoutTime = DateTime.Now;
 
             // Save changes to the database
             _employeeDBContext.SaveChanges();
 
             return Ok("Logout Successful");
+        }
+
+        [HttpGet("validate-session/{userId}")]
+        public IActionResult ValidateSession(int userId)
+        {
+            try
+            {
+                // Extract the token from the Authorization header
+                var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+                if (string.IsNullOrEmpty(token))
+                {
+                    return Unauthorized("Authorization token is missing.");
+                }
+
+                // Check if there is an active session with the given userId and token
+                var session = _employeeDBContext.Authentication
+                    .FirstOrDefault(e => e.LoginUserId == userId && e.IsActive == true && e.AuthKey == token);
+
+                if (session == null)
+                {
+                    // If no matching session is found, the session is invalid
+                    return Unauthorized("Session invalid or expired.");
+                }
+
+                // If session is valid, return success response
+                return Ok("Session valid.");
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and return a 500 error
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         // Create a model to bind the request body
