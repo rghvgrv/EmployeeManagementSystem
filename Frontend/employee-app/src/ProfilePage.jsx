@@ -42,7 +42,7 @@ const ProfilePage = () => {
 
         const fetchProfile = async () => {
             try {
-                const response = await fetch(`http://localhost:5059/GetEmployeeByUserId/${userId}`, {
+                const response = await fetch(`http://localhost:5059/api/Employee/GetEmployeeByUserId/${userId}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

@@ -1,4 +1,5 @@
 using EmployeeManagementSystem.DB;
+using EmployeeManagementSystem.Middleware;
 using EmployeeManagementSystem.Repositories;
 using EmployeeManagementSystem.Repositories.Interfaces;
 using EmployeeManagementSystem.Services;
@@ -56,7 +57,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -67,6 +67,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowAll");
+
+// Use the custom middleware
+app.UseMiddleware<SessionValidationMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

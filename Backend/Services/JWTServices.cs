@@ -65,5 +65,13 @@ namespace EmployeeManagementSystem.Services
 
             return false;
         }
+
+        public string GetUserIdFromToken(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var securityToken = tokenHandler.ReadJwtToken(token);
+            var userId = securityToken.Claims.First(claim => claim.Type == ClaimTypes.Name).Value;
+            return userId;
+        }
     }
 }

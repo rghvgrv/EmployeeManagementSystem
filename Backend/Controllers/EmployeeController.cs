@@ -22,21 +22,21 @@ namespace EmployeeManagementSystem.Controllers
         }
 
         [HttpGet]
-        [Route("/GetAllEmployees")]
+        [Route("GetAllEmployees")]
         public IActionResult GetAll()
         {
             return Ok(employeeRepository.GetAllEmployees());
         }
 
         [HttpGet]
-        [Route("/GetEmployeeById/{id}")]
+        [Route("GetEmployeeById/{id}")]
         public IActionResult GetById(int id)
         {
             return Ok(employeeRepository.GetEmployeeById(id));
         }
 
         [HttpPost]
-        [Route("/AddEmployee")]
+        [Route("AddEmployee")]
         public IActionResult Add([FromBody] EmployeeCreateDTO employee)
         {
             employeeRepository.AddEmployee(employee);
@@ -44,7 +44,7 @@ namespace EmployeeManagementSystem.Controllers
         }
 
         [HttpPut]
-        [Route("/UpdateEmployee")]
+        [Route("UpdateEmployee")]
         public IActionResult Update([FromBody] EmployeeCreateDTO employee)
         {
             employeeRepository.UpdateEmployee(employee);
@@ -52,7 +52,7 @@ namespace EmployeeManagementSystem.Controllers
         }
 
         [HttpGet]
-        [Route("/GetEmployeeByUserId/{id}")]
+        [Route("GetEmployeeByUserId/{id}")]
         public IActionResult GetEmployeeUserId(int id)
         {
             return Ok(employeeRepository.GetEmployeeByUserId(id));
