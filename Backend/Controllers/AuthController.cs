@@ -139,7 +139,7 @@ namespace EmployeeManagementSystem.Controllers
             catch (Exception ex)
             {
                 // Log the exception and return a 500 error
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Unauthorized("Token Expired.");
             }
         }
 

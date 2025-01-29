@@ -2,6 +2,8 @@
 using EmployeeManagementSystem.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EmployeeManagementSystem.Middleware
@@ -26,31 +28,38 @@ namespace EmployeeManagementSystem.Middleware
 
                     var token = context.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
 
-                    if (string.IsNullOrEmpty(token) || !_jwtService.ValidateToken(token))
+                    if (string.IsNullOrEmpty(token))
                     {
                         context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                        await context.Response.WriteAsync("Authorization token is missing or invalid.");
+                        await context.Response.WriteAsync("Authorization token is missing.");
                         return;
                     }
 
                     var authIdClaim = _jwtService.GetUserIdFromToken(token);
-                    if (authIdClaim == null)
+
+                    if (authIdClaim == null || !int.TryParse(authIdClaim, out int authId))
                     {
                         context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                         await context.Response.WriteAsync("Invalid token.");
                         return;
                     }
 
-                    var authId = int.Parse(authIdClaim);
-
-                    var session = _employeeDBContext.Authentication
-                        .FirstOrDefault(e => e.Id == authId && e.IsActive == true);
+                    var session = _employeeDBContext.Authentication.FirstOrDefault(e => e.Id == authId && e.IsActive == true);
 
                     if (session == null)
                     {
                         context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                         await context.Response.WriteAsync("Session invalid or expired.");
                         return;
+                    }
+
+                    // Validate the token
+                    if (!_jwtService.ValidateToken(token))
+                    {
+                        // Token expired but session is still active -> Issue a new token
+                        var newToken = _jwtService.GenerateToken(authId);
+
+                        context.Response.Headers.Add("New-Token", newToken);
                     }
                 }
             }

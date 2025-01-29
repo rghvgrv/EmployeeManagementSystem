@@ -38,6 +38,7 @@ const WelcomePage = () => {
     window.addEventListener("storage", handleStorageChange);
 
     // Periodic session validation
+    // Periodic session validation
     const validateSession = async () => {
       const token = localStorage.getItem("token");
       if (token && storedUserId) {
@@ -49,7 +50,13 @@ const WelcomePage = () => {
             },
           });
 
-          if (!response.ok) {
+          if (response.ok) {
+            // Check if a new token is issued and update it
+            const newToken = response.headers.get("New-Token");
+            if (newToken) {
+              localStorage.setItem("token", newToken);
+            }
+          } else {
             // Session invalid, log out the user
             handleLogout();
           }
@@ -59,6 +66,7 @@ const WelcomePage = () => {
         }
       }
     };
+
 
     const intervalId = setInterval(validateSession, 10000); // Check every sec
 
