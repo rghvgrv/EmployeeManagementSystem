@@ -72,8 +72,32 @@ const ProfilePage = () => {
         }
     }, [userId, token, navigate]);
 
-    const handleBack = () => {
-        navigate("/welcome");
+    const handleBack = async () => {
+        try {
+            const response = await fetch(`http://localhost:5059/api/Auth/validate-session/${userId}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+    
+            if (response.ok) {
+                navigate("/welcome"); // Navigate only if session is valid
+            } else {
+                setError("Session expired. Redirecting to login...");
+                setTimeout(() => {
+                    localStorage.clear();
+                    navigate("/");
+                }, 2000);
+            }
+        } catch (err) {
+            setError("An error occurred while validating the session.");
+            setTimeout(() => {
+                localStorage.clear();
+                navigate("/");
+            }, 2000);
+        }
     };
 
     return (

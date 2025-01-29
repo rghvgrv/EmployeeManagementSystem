@@ -21,12 +21,12 @@ namespace EmployeeManagementSystem.Services
             _expiryInMinutes = int.Parse(configuration["Jwt:ExpiryInMinutes"]);
         }
 
-        public string GenerateToken(string username)
+        public string GenerateToken(int id)
         {
             var claims = new[]
             {
-            new Claim(ClaimTypes.Name, username),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                new Claim("id", id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_key));
@@ -70,7 +70,7 @@ namespace EmployeeManagementSystem.Services
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var securityToken = tokenHandler.ReadJwtToken(token);
-            var userId = securityToken.Claims.First(claim => claim.Type == ClaimTypes.Name).Value;
+            var userId = securityToken.Claims.First(claim => claim.Type == "id").Value;
             return userId;
         }
     }

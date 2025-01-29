@@ -29,14 +29,14 @@ namespace EmployeeManagementSystem.Controllers
         {
             var loginuser = await _employeeDBContext.User.FirstOrDefaultAsync(u => u.Username == user.Username);
 
-            if(loginuser == null)
+            if (loginuser == null)
             {
                 return Unauthorized("User name is Invalid");
             }
 
             user.Password = HashingServices.HashPassword(user.Password);
 
-            if(loginuser.PasswordHash != user.Password)
+            if (loginuser.PasswordHash != user.Password)
             {
                 return Unauthorized("Password is Invalid");
             }
@@ -50,13 +50,10 @@ namespace EmployeeManagementSystem.Controllers
                 await _employeeDBContext.SaveChangesAsync();
             }
 
-            //Generate JWT Token
-            var token = _jwtService.GenerateToken(user.Username);
-
+            // Create authentication record first
             var loginActivity = new Authentication
             {
                 LoginUserId = loginuser.Id,
-                AuthKey = token,
                 LoginTime = DateTime.Now,
                 LogoutTime = DateTime.Now.AddMinutes(15),
                 IsActive = true
@@ -65,8 +62,22 @@ namespace EmployeeManagementSystem.Controllers
             await _employeeDBContext.Authentication.AddAsync(loginActivity);
             await _employeeDBContext.SaveChangesAsync();
 
-            // Return the token
-            return Ok(new { Token = token , message ="Login Successfull", username = user.Username , userid = loginuser.Id });
+            // Generate JWT Token using authentication ID and username
+            var token = _jwtService.GenerateToken(loginActivity.Id);
+
+            // Update the authentication record with the generated token
+            loginActivity.AuthKey = token;
+            await _employeeDBContext.SaveChangesAsync();
+
+            // Return the token along with authentication ID
+            return Ok(new
+            {
+                Token = token,
+                message = "Login Successful",
+                username = user.Username,
+                userid = loginuser.Id,
+                authId = loginActivity.Id
+            });
         }
 
         [HttpPost("logout")]
@@ -110,15 +121,17 @@ namespace EmployeeManagementSystem.Controllers
                     return Unauthorized("Authorization token is missing.");
                 }
 
-                // Check if there is an active session with the given userId and token
-                var session = _employeeDBContext.Authentication
-                    .FirstOrDefault(e => e.LoginUserId == userId && e.IsActive == true && e.AuthKey == token);
+                var authIdClaim = _jwtService.GetUserIdFromToken(token);
 
-                if (session == null)
+                if (authIdClaim == null)
                 {
-                    // If no matching session is found, the session is invalid
-                    return Unauthorized("Session invalid or expired.");
+                    return Unauthorized("Invalid token.");
                 }
+
+                var authId = int.Parse(authIdClaim);
+
+                var session = _employeeDBContext.Authentication
+                    .FirstOrDefault(e => e.Id == authId && e.IsActive == true);
 
                 // If session is valid, return success response
                 return Ok("Session valid.");

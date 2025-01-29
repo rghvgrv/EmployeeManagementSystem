@@ -2,7 +2,7 @@
 {
     public interface IJWTServices
     {
-        string GenerateToken(string username);
+        string GenerateToken(int id);
         bool ValidateToken(string token);
 
         string GetUserIdFromToken(string token);

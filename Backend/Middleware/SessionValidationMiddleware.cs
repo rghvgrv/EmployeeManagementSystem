@@ -33,24 +33,18 @@ namespace EmployeeManagementSystem.Middleware
                         return;
                     }
 
-                    var userIdClaim = _jwtService.GetUserIdFromToken(token);
-                    if (userIdClaim == null)
+                    var authIdClaim = _jwtService.GetUserIdFromToken(token);
+                    if (authIdClaim == null)
                     {
                         context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                         await context.Response.WriteAsync("Invalid token.");
                         return;
                     }
 
-                    var userId = _employeeDBContext.User.FirstOrDefault(u => u.Username == userIdClaim).Id;
-                    if(userId == 0)
-                    {
-                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                        await context.Response.WriteAsync("User not found.");
-                        return;
-                    }
+                    var authId = int.Parse(authIdClaim);
 
                     var session = _employeeDBContext.Authentication
-                        .FirstOrDefault(e => e.LoginUserId == userId && e.IsActive == true && e.AuthKey == token);
+                        .FirstOrDefault(e => e.Id == authId && e.IsActive == true);
 
                     if (session == null)
                     {
